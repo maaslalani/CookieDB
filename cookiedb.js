@@ -35,7 +35,7 @@ class CookieDB {
 
       for (let i = 0; i < items.length; i++)
         localStorage.removeItem(items[i]._id)
-    });
+    })
   }
 
   update(collection, key, value) {
