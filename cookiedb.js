@@ -8,14 +8,16 @@ class CookieDB {
     localStorage.setItem(collection, JSON.stringify([]))
   }
 
-  insert(collection, value) {
-    value._id = this.length++
-    localStorage.setItem('length', JSON.stringify(this.length))
+  insert(collection, ...values) {
+    values.forEach(value => {
+      value._id = this.length++
+      localStorage.setItem('length', JSON.stringify(this.length))
 
-    let data = JSON.parse(localStorage.getItem(collection))
-    data.push(value)
+      let data = JSON.parse(localStorage.getItem(collection))
+      data.push(value)
 
-    localStorage.setItem(collection, JSON.stringify(data))
+      localStorage.setItem(collection, JSON.stringify(data))
+    })
   }
 
   find(collection, query) {
@@ -27,11 +29,13 @@ class CookieDB {
     return items
   }
 
-  remove(collection, query) {
-    let items = this.find(query)
+  remove(collection, ...queries) {
+    queries.forEach(query => {
+      let items = this.find(collection, query)
 
-    for (let i = 0; i < items.length; i++)
-      localStorage.removeItem(items[i]._id)
+      for (let i = 0; i < items.length; i++)
+        localStorage.removeItem(items[i]._id)
+    });
   }
 
   update(collection, key, value) {
