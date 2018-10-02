@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "CookieDB is a database for the browser. It can store data as documents in collections like any noSQL database. It allows for very organized and structured data by using nothing other than javascript on the browser.",
   "main": "cookiedb.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
