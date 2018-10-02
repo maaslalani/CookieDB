@@ -57,3 +57,5 @@ class CookieDB {
   }
 
 }
+
+if (module) module.exports = CookieDB
