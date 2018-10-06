@@ -1,0 +1,22 @@
+{
+  "name": "cookiedb",
+  "version": "1.0.0",
+  "description": "CookieDB is a database for the browser. It can store data as documents in collections like any noSQL database. It allows for very organized and structured data by using nothing other than javascript on the browser.",
+  "main": "cookiedb.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maaslalani/CookieDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maaslalani/CookieDB/issues"
+  },
+  "homepage": "https://github.com/maaslalani/CookieDB#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
