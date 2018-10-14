@@ -15,7 +15,7 @@ class LocalStorage {
     return item === undefined ? null : item
   }
   setItem (key, value) {
-    this[keys].set(key, value)
+    this[keys].set(key, value.toString())
   }
   removeItem (key) {
     this[keys].delete(key)
