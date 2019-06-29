@@ -34,10 +34,11 @@ class CookieDB {
 
     queries.forEach(query => {
       let items = this.find(collection, query)
-      for (let i = 0; i < items.length; i++) {
-        let item = JSON.stringify(items[i])
-        data = data.replace(new RegExp(`(,${item})|(,${item},)|(${item},)`, 'g'), '')
-      }
+      items
+        .map(item => JSON.stringify(item))
+        .forEach((item) => {
+          data = data.replace(new RegExp(`(,${item})|(,${item},)|(${item},)`, 'g'), '')
+        })
     })
 
     localStorage.setItem(collection, data)
